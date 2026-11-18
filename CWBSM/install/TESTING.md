@@ -1,20 +1,18 @@
-# CWBSM v1.6 手动烧录与测试
+# CWBSM v3.1.0 手动烧录与测试
 
 设备：ESP32，4 MB Flash。完整中日韩字体保留。
 
 ## 烧录
 
-按屏幕型号选择 ili9341 或 st7789 文件夹。不要混用。
+按开发板与屏幕选择 cyd_ili9341、cyd_st7789、e32r28t_ili9341 或 e32r28t_st7789 文件夹。不要混用：板型决定功放、RGB 灯和光敏电阻的引脚。
 
 推荐保留配置的分地址烧录（在对应型号文件夹执行，替换 PORT）：
 
 ```sh
-python -m esptool --chip esp32 --port PORT --baud 460800 --after hard-reset write_flash -z 0x1000 bootloader.bin 0x8000 partitions.bin 0x10000 firmware.bin
+python -m esptool --chip esp32 --port PORT --baud 460800 --after hard-reset write_flash -z 0x1000 bootloader.bin 0x8000 partitions.bin 0xe000 boot_app0.bin 0x10000 firmware.bin
 ```
 
 必须写入新的 partitions.bin：固件区 3.75 MiB，文件系统 128 KiB。NVS 配置区保留。无需 erase_flash。
-
-merged.bin 是从 0x0 开始的合并文件，适合新设备/接受清空配置的安装；合并文件覆盖到 NVS 地址，不用于保留设置的升级。
 
 若配置过静态 IP 后无法连接：长按 BOOT 5 秒松开进入配网；必要时通过后台恢复 DHCP。Wi-Fi 重置不清除其他设置。
 

@@ -90,8 +90,7 @@ function radioForm(st){
     const n=name.value.trim(),u=url.value.trim(),to=Number(cat.value);
     if(!n){toast(t('radio.needName'),true);return;}
     if(radioBytes(n)>=40){toast(t('radio.nameTooLong'),true);return;}
-    if(/^https:/i.test(u)){toast(t('radio.noHttps'),true);return;}
-    if(!/^http:\/\/.{4,}/i.test(u)||radioBytes(u)>=256){toast(t('radio.badUrl'),true);return;}
+    if(!/^https?:\/\/.{4,}/i.test(u)||radioBytes(u)>=256){toast(t('radio.badUrl'),true);return;}
     const body={action:'save',cat:st?st.category:to,id:st?st.id:0,to,name:n,url:u,codec:Number(codec.value)};
     if(!st&&radioList===0)body.fav=true;
     save.disabled=true;
@@ -218,7 +217,7 @@ function radioParseList(text){
     const line=raw.trim();if(!line||line.startsWith('#'))return;
     const m=line.match(/^(.*?)\s*[,，]\s*(https?:\/\/\S+)$/i);
     const name=m?m[1].trim():'',url=m?m[2]:'';
-    if(!name||!/^http:\/\/.{4,}/i.test(url)||radioBytes(name)>=40||radioBytes(url)>=256)skipped.push(i+1);
+    if(!name||!/^https?:\/\/.{4,}/i.test(url)||radioBytes(name)>=40||radioBytes(url)>=256)skipped.push(i+1);
     else stations.push({name,url,codec:'auto'});
   });
   return {stations,skipped};
@@ -406,7 +405,7 @@ function radioParseBackup(text){
     const stations=[];
     for(const s of Array.isArray(c?.stations)?c.stations:[]){
       const n=String(s?.name||'').trim(),u=String(s?.url||'').trim();
-      if(!n||radioBytes(n)>=40||!/^http:\/\/.{4,}/i.test(u)||radioBytes(u)>=256||stations.length>=100){skipped++;continue;}
+      if(!n||radioBytes(n)>=40||!/^https?:\/\/.{4,}/i.test(u)||radioBytes(u)>=256||stations.length>=100){skipped++;continue;}
       stations.push([n,u,!!s.favorite,Math.max(0,RADIO_CODECS.indexOf(s.codec))]);
     }
     return {name,stations};

@@ -1,6 +1,6 @@
 {
   "project": "CWBSM",
-  "version": "v3.0",
+  "version": "v3.1.0",
   "chipFamily": "ESP32",
   "flashBytes": 4194304,
   "width": 320,
@@ -8,84 +8,172 @@
   "touch": "XPT2046",
   "variants": [
     {
-      "id": "ili9341",
+      "id": "cyd_ili9341",
+      "board": "CYD",
       "controller": "ILI9341",
+      "label": "CYD \u00b7 ILI9341",
       "spiMHz": 40,
       "inverted": false,
-      "manifest": "./manifests/ili9341.json",
-      "download": "./downloads/CWBSM-ILI9341-v3.0.zip",
+      "manifest": "./manifests/cyd_ili9341.json",
+      "download": "./downloads/CWBSM-CYD-ILI9341-v3.1.0.zip",
       "files": [
         {
           "name": "bootloader.bin",
-          "path": "./firmware/ili9341/bootloader.bin",
+          "path": "./firmware/cyd_ili9341/bootloader.bin",
           "offset": 4096,
           "bytes": 17536,
-          "sha256": "3d234a7471f67b013686dabd4dee7c1fa915c9928463616a94bc9297acf1abf8"
+          "sha256": "eb0806f0bce29529a3108c352c6b615c4d201bcd987eaea3c4f65a5e32b17d9a"
         },
         {
           "name": "partitions.bin",
-          "path": "./firmware/ili9341/partitions.bin",
+          "path": "./firmware/cyd_ili9341/partitions.bin",
           "offset": 32768,
           "bytes": 3072,
           "sha256": "0a8d1d639f18bf01f729aff519ad9007e51c3d4ac1d0ce7c8dfaee4e4a59400c"
         },
         {
           "name": "boot_app0.bin",
-          "path": "./firmware/ili9341/boot_app0.bin",
+          "path": "./firmware/cyd_ili9341/boot_app0.bin",
           "offset": 57344,
           "bytes": 8192,
-          "sha256": "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0"
+          "sha256": "7d2c7ac4888bfd75cd5f56e8d61f69595121183afc81556c876732fd3782c62f"
         },
         {
           "name": "firmware.bin",
-          "path": "./firmware/ili9341/firmware.bin",
+          "path": "./firmware/cyd_ili9341/firmware.bin",
           "offset": 65536,
-          "bytes": 3879792,
-          "sha256": "5440e300f59773cf1d35cce0570f7d031cc0d61f17d107f0ce6c2e615c8ca95d"
+          "bytes": 3788448,
+          "sha256": "1448ae4bc88c346aa498f19c05725d745ce0f5d85d4f2800901874a2c3b9c671"
         }
       ],
-      "totalBytes": 3908592,
-      "applicationBytes": 3879792
+      "totalBytes": 3817248,
+      "applicationBytes": 3788448
     },
     {
-      "id": "st7789",
+      "id": "cyd_st7789",
+      "board": "CYD",
       "controller": "ST7789",
+      "label": "CYD \u00b7 ST7789",
       "spiMHz": 40,
       "inverted": false,
-      "manifest": "./manifests/st7789.json",
-      "download": "./downloads/CWBSM-ST7789-v3.0.zip",
+      "manifest": "./manifests/cyd_st7789.json",
+      "download": "./downloads/CWBSM-CYD-ST7789-v3.1.0.zip",
       "files": [
         {
           "name": "bootloader.bin",
-          "path": "./firmware/st7789/bootloader.bin",
+          "path": "./firmware/cyd_st7789/bootloader.bin",
           "offset": 4096,
           "bytes": 17536,
-          "sha256": "3d234a7471f67b013686dabd4dee7c1fa915c9928463616a94bc9297acf1abf8"
+          "sha256": "eb0806f0bce29529a3108c352c6b615c4d201bcd987eaea3c4f65a5e32b17d9a"
         },
         {
           "name": "partitions.bin",
-          "path": "./firmware/st7789/partitions.bin",
+          "path": "./firmware/cyd_st7789/partitions.bin",
           "offset": 32768,
           "bytes": 3072,
           "sha256": "0a8d1d639f18bf01f729aff519ad9007e51c3d4ac1d0ce7c8dfaee4e4a59400c"
         },
         {
           "name": "boot_app0.bin",
-          "path": "./firmware/st7789/boot_app0.bin",
+          "path": "./firmware/cyd_st7789/boot_app0.bin",
           "offset": 57344,
           "bytes": 8192,
-          "sha256": "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0"
+          "sha256": "7d2c7ac4888bfd75cd5f56e8d61f69595121183afc81556c876732fd3782c62f"
         },
         {
           "name": "firmware.bin",
-          "path": "./firmware/st7789/firmware.bin",
+          "path": "./firmware/cyd_st7789/firmware.bin",
           "offset": 65536,
-          "bytes": 3879408,
-          "sha256": "2a79daed17c7c97c7d25221514d6e3fa8c12e959d8dd16e2cd6e213bfa73cee0"
+          "bytes": 3788016,
+          "sha256": "bfaf537dabe5f3fb721a3b7530fef4fda89c2e59d1eab8a83830383ce033692a"
         }
       ],
-      "totalBytes": 3908208,
-      "applicationBytes": 3879408
+      "totalBytes": 3816816,
+      "applicationBytes": 3788016
+    },
+    {
+      "id": "e32r28t_ili9341",
+      "board": "E32R28T",
+      "controller": "ILI9341",
+      "label": "E32R28T \u00b7 ILI9341",
+      "spiMHz": 40,
+      "inverted": false,
+      "manifest": "./manifests/e32r28t_ili9341.json",
+      "download": "./downloads/CWBSM-E32R28T-ILI9341-v3.1.0.zip",
+      "files": [
+        {
+          "name": "bootloader.bin",
+          "path": "./firmware/e32r28t_ili9341/bootloader.bin",
+          "offset": 4096,
+          "bytes": 17536,
+          "sha256": "eb0806f0bce29529a3108c352c6b615c4d201bcd987eaea3c4f65a5e32b17d9a"
+        },
+        {
+          "name": "partitions.bin",
+          "path": "./firmware/e32r28t_ili9341/partitions.bin",
+          "offset": 32768,
+          "bytes": 3072,
+          "sha256": "0a8d1d639f18bf01f729aff519ad9007e51c3d4ac1d0ce7c8dfaee4e4a59400c"
+        },
+        {
+          "name": "boot_app0.bin",
+          "path": "./firmware/e32r28t_ili9341/boot_app0.bin",
+          "offset": 57344,
+          "bytes": 8192,
+          "sha256": "7d2c7ac4888bfd75cd5f56e8d61f69595121183afc81556c876732fd3782c62f"
+        },
+        {
+          "name": "firmware.bin",
+          "path": "./firmware/e32r28t_ili9341/firmware.bin",
+          "offset": 65536,
+          "bytes": 3783600,
+          "sha256": "8305b9e87c9d45c31970a7b7774b0080051efdc81ee3a85621688dda5844d31d"
+        }
+      ],
+      "totalBytes": 3812400,
+      "applicationBytes": 3783600
+    },
+    {
+      "id": "e32r28t_st7789",
+      "board": "E32R28T",
+      "controller": "ST7789",
+      "label": "E32R28T \u00b7 ST7789",
+      "spiMHz": 40,
+      "inverted": false,
+      "manifest": "./manifests/e32r28t_st7789.json",
+      "download": "./downloads/CWBSM-E32R28T-ST7789-v3.1.0.zip",
+      "files": [
+        {
+          "name": "bootloader.bin",
+          "path": "./firmware/e32r28t_st7789/bootloader.bin",
+          "offset": 4096,
+          "bytes": 17536,
+          "sha256": "eb0806f0bce29529a3108c352c6b615c4d201bcd987eaea3c4f65a5e32b17d9a"
+        },
+        {
+          "name": "partitions.bin",
+          "path": "./firmware/e32r28t_st7789/partitions.bin",
+          "offset": 32768,
+          "bytes": 3072,
+          "sha256": "0a8d1d639f18bf01f729aff519ad9007e51c3d4ac1d0ce7c8dfaee4e4a59400c"
+        },
+        {
+          "name": "boot_app0.bin",
+          "path": "./firmware/e32r28t_st7789/boot_app0.bin",
+          "offset": 57344,
+          "bytes": 8192,
+          "sha256": "7d2c7ac4888bfd75cd5f56e8d61f69595121183afc81556c876732fd3782c62f"
+        },
+        {
+          "name": "firmware.bin",
+          "path": "./firmware/e32r28t_st7789/firmware.bin",
+          "offset": 65536,
+          "bytes": 3783152,
+          "sha256": "21845aa00e1806b258cc7f292102067fa9c2fc3b7c6a1202278493f4d29352f2"
+        }
+      ],
+      "totalBytes": 3811952,
+      "applicationBytes": 3783152
     }
   ]
 }

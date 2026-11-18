@@ -15,7 +15,7 @@ function refresh(){
  $('environmentNotice').hidden=allowed&&supported;$('environmentNotice').textContent=t(!allowed?'browser.insecure':'environment.unsupported');
  $('installButton').disabled=!(ready&&componentReady&&supported&&allowed&&!busy);
  $('installButtonText').textContent=t(!selected?'connect.choose':!ready?'connect.wait':'connect.install');
- $('selectedModel').textContent=selected?`CWBSM · ${selected.controller}`:t('connect.none');
+ $('selectedModel').textContent=selected?`CWBSM · ${selected.label}`:t('connect.none');
  if(selected&&ready)status(t('verify.ready'),'ready');
 }
 async function language(code,manual=false){
@@ -23,7 +23,7 @@ async function language(code,manual=false){
  try{
   const response=await fetch(new URL('locales/'+code+'.json',base));if(!response.ok)throw Error('Language file HTTP '+response.status);
   const values=await response.json();if(turn!==languageTurn)return;messages=values;lang=code;
-  document.documentElement.lang=code==='zh'?'zh-CN':code;document.title='CWBSM v3.0 · '+t('nav.install');
+  document.documentElement.lang=code==='zh'?'zh-CN':code;document.title='CWBSM v3.1.0 · '+t('nav.install');
   document.querySelectorAll('[data-i18n],[data-i18n-html]').forEach(el=>{const key=el.dataset.i18n||el.dataset.i18nHtml;if(!messages[key])return;if(el.dataset.i18nHtml)el.innerHTML=messages[key];else el.textContent=messages[key];});
   $('languageSelect').value=code;$('languageSelect').setAttribute('aria-label',t('language'));
   if(!selected)status(t('verify.idle'));if(manual)rememberLanguage(code);refresh();

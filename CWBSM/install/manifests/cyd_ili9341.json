@@ -1,6 +1,6 @@
 {
-  "name": "CWBSM ST7789",
-  "version": "v3.0",
+  "name": "CWBSM CYD \u00b7 ILI9341",
+  "version": "v3.1.0",
   "new_install_prompt_erase": true,
   "new_install_improv_wait_time": 0,
   "builds": [
@@ -8,19 +8,19 @@
       "chipFamily": "ESP32",
       "parts": [
         {
-          "path": "../firmware/st7789/bootloader.bin",
+          "path": "../firmware/cyd_ili9341/bootloader.bin",
           "offset": 4096
         },
         {
-          "path": "../firmware/st7789/partitions.bin",
+          "path": "../firmware/cyd_ili9341/partitions.bin",
           "offset": 32768
         },
         {
-          "path": "../firmware/st7789/boot_app0.bin",
+          "path": "../firmware/cyd_ili9341/boot_app0.bin",
           "offset": 57344
         },
         {
-          "path": "../firmware/st7789/firmware.bin",
+          "path": "../firmware/cyd_ili9341/firmware.bin",
           "offset": 65536
         }
       ]
