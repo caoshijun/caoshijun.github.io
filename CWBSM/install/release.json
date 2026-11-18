@@ -1,6 +1,6 @@
 {
   "project": "CWBSM",
-  "version": "v2.2.3",
+  "version": "v3.0",
   "chipFamily": "ESP32",
   "flashBytes": 4194304,
   "width": 320,
@@ -13,7 +13,7 @@
       "spiMHz": 40,
       "inverted": false,
       "manifest": "./manifests/ili9341.json",
-      "download": "./downloads/CWBSM-ILI9341-v2.2.3.zip",
+      "download": "./downloads/CWBSM-ILI9341-v3.0.zip",
       "files": [
         {
           "name": "bootloader.bin",
@@ -40,12 +40,12 @@
           "name": "firmware.bin",
           "path": "./firmware/ili9341/firmware.bin",
           "offset": 65536,
-          "bytes": 3791248,
-          "sha256": "aab6884ffe5872b2c5be21c525b5135dd78a88892aff94839a8a683720e0cdf1"
+          "bytes": 3879792,
+          "sha256": "5440e300f59773cf1d35cce0570f7d031cc0d61f17d107f0ce6c2e615c8ca95d"
         }
       ],
-      "totalBytes": 3820048,
-      "applicationBytes": 3791248
+      "totalBytes": 3908592,
+      "applicationBytes": 3879792
     },
     {
       "id": "st7789",
@@ -53,7 +53,7 @@
       "spiMHz": 40,
       "inverted": false,
       "manifest": "./manifests/st7789.json",
-      "download": "./downloads/CWBSM-ST7789-v2.2.3.zip",
+      "download": "./downloads/CWBSM-ST7789-v3.0.zip",
       "files": [
         {
           "name": "bootloader.bin",
@@ -80,12 +80,12 @@
           "name": "firmware.bin",
           "path": "./firmware/st7789/firmware.bin",
           "offset": 65536,
-          "bytes": 3790720,
-          "sha256": "508fe0c3c8dfb1090a16aa49222af5ec040d64cb99f9b3ef505e920463af5693"
+          "bytes": 3879408,
+          "sha256": "2a79daed17c7c97c7d25221514d6e3fa8c12e959d8dd16e2cd6e213bfa73cee0"
         }
       ],
-      "totalBytes": 3819520,
-      "applicationBytes": 3790720
+      "totalBytes": 3908208,
+      "applicationBytes": 3879408
     }
   ]
 }

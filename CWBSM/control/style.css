@@ -149,3 +149,36 @@
   #radio .meter{flex:1}
 }
 @media (prefers-reduced-motion:reduce){#radio .meter span,#radio .sorting .row-wrap{transition:none}}
+
+/* SD card file manager */
+#files .file-tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+#files #filesCard{margin:0}#files #filesCard.error{color:var(--danger,#f87171)}
+#files .crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:4px 0 12px;font-size:14px}
+#files .crumbs .sep{color:var(--muted)}
+#files .link{background:none;border:0;padding:0;color:var(--accent);font:inherit;cursor:pointer;text-align:left}
+#files .file-drop{border:1px dashed transparent;border-radius:14px;min-height:80px}
+#files .file-drop.over{border-color:var(--accent);background:#14202f}
+#files .file-row{min-height:44px;gap:12px}
+#files .file-row:hover{background:#18222f}
+#files .file-icon{width:22px;text-align:center;color:var(--muted)}
+#files .file-name{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#files .file-meta{color:var(--muted);font-size:12px;white-space:nowrap;min-width:64px;text-align:right}
+#files .file-actions{display:flex;gap:4px}
+#files .icon-button{background:none;border:1px solid var(--border);border-radius:8px;color:inherit;min-width:32px;height:32px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
+#files .icon-button:hover{border-color:var(--accent)}
+#files .danger-text:hover{border-color:#f87171}
+#files .queue{display:grid;gap:8px;margin-top:8px}
+#files .queue-row{display:grid;grid-template-columns:minmax(0,1fr) 120px minmax(80px,auto) auto;gap:10px;align-items:center;font-size:13px}
+#files .queue-row progress{width:100%}
+#files .queue-state{color:var(--muted);font-size:12px}#files .queue-state.error{color:#f87171}
+.files-dialog{border:1px solid var(--border);border-radius:16px;background:#121b29;color:inherit;max-width:min(560px,92vw);padding:22px}
+.files-dialog::backdrop{background:#000a}
+.files-dialog pre{white-space:pre-wrap;max-height:40vh;overflow:auto;background:#0c1420;border-radius:10px;padding:12px;font-size:13px}
+.files-dialog .dialog-buttons,.button-row{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;margin-top:12px}
+.button-row{justify-content:flex-start}
+@media (max-width:640px){#files .file-meta:last-of-type{display:none}#files .queue-row{grid-template-columns:minmax(0,1fr) 70px auto}#files .queue-row .queue-state{display:none}}
+#files .music-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:16px 20px}
+#files .music-text{flex:1;min-width:140px;display:grid;gap:2px}#files .music-text strong{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#files .music-text small{color:var(--muted);font-size:12px}
+#files .music-controls{display:flex;align-items:center;gap:6px;flex-wrap:wrap}#files .music-controls select{width:auto;min-height:32px;padding:4px 8px}
+#files .music-controls input[type=range]{width:110px}
