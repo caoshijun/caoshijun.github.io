@@ -5,7 +5,7 @@ export async function verifyVariant(variant, base, {signal, fetcher=fetch, crypt
   if(!response.ok) throw Error(`Manifest HTTP ${response.status}`);
   const manifest=await response.json();
   const builds=manifest.builds;
-  if(manifest.name!==`CWBSM ${variant.controller}` || builds?.length!==1 || builds[0].chipFamily!=='ESP32' || builds[0].parts?.length!==4) throw Error('Manifest/controller mismatch');
+  if(manifest.name!==`CWBSM ${variant.label||variant.controller}` || builds?.length!==1 || builds[0].chipFamily!=='ESP32' || builds[0].parts?.length!==4) throw Error('Manifest/controller mismatch');
   const offsets=[4096,32768,57344,65536];
   for(let i=0;i<4;i++) {
     const file=variant.files[i], part=builds[0].parts[i];
