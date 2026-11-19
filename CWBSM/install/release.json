@@ -43,7 +43,7 @@
           "path": "./firmware/cyd_ili9341/firmware.bin",
           "offset": 65536,
           "bytes": 3803344,
-          "sha256": "144f9b54c33365afb0660168321724cd5e9b9a2510b7dcb995dffdccb26fe4ca"
+          "sha256": "d9285d9acd096ec839ef1385a9208b6a48140e34c7d6613c67ca91f59e86d788"
         }
       ],
       "totalBytes": 3832144,
@@ -85,7 +85,7 @@
           "path": "./firmware/cyd_st7789/firmware.bin",
           "offset": 65536,
           "bytes": 3802944,
-          "sha256": "36bf625f7ae4d83d48b75ca4cfad389c4cc7ea22642aaaf08306d0d218a994a3"
+          "sha256": "315aef4c82b4764dc1f28e5e35c782839f493852c1fecb9faf0e84493c61f8f7"
         }
       ],
       "totalBytes": 3831744,
@@ -126,12 +126,12 @@
           "name": "firmware.bin",
           "path": "./firmware/e32r28t_ili9341/firmware.bin",
           "offset": 65536,
-          "bytes": 3798480,
-          "sha256": "7b41310cd888dbe5f419343132490d73f04e1c0fcee0c02ca12adf666cd34661"
+          "bytes": 3798496,
+          "sha256": "3770b91a4dbe20bf0c1880c5dbcf3d70daae5dfef7e8f6024a4b231f07ab7a63"
         }
       ],
-      "totalBytes": 3827280,
-      "applicationBytes": 3798480
+      "totalBytes": 3827296,
+      "applicationBytes": 3798496
     },
     {
       "id": "e32r28t_st7789",
@@ -169,7 +169,7 @@
           "path": "./firmware/e32r28t_st7789/firmware.bin",
           "offset": 65536,
           "bytes": 3798096,
-          "sha256": "651b297d7b2bc5c0960c3fa7201104c4838f8b88a6174c472421719fa094d8d1"
+          "sha256": "b249ac782a4e58d666a79b246798bb835ccc4246c0ed8eed680cde9d69d99def"
         }
       ],
       "totalBytes": 3826896,
