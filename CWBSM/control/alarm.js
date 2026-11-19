@@ -44,10 +44,16 @@ function alarmRenderList(){
     const summary=document.createElement('span');summary.className='alarm-summary';summary.textContent=alarmDays(alarm.days);days.append(summary);
     const grid=document.createElement('div');grid.className='alarm-grid';
     const zone=alarmZoneSelect(alarm.zone);zone.onchange=()=>{alarm.zone=zone.value;alarmTouched();};
-    const tone=alarmSelect([0,1,2,3].map(i=>['t'+i,t('tone.'+['beep','chime','melody','gentle'][i])]),'t'+alarm.tone);const stations=typeof radioStations==='function'?radioStations():[];const groups={};for(const st of stations){if(!groups[st.category]){const group=document.createElement('optgroup');group.label=t('radio.alarmGroup')+' · '+st.categoryName;tone.append(group);groups[st.category]=group;}groups[st.category].append(new Option('📻 '+st.name,'r'+st.category+':'+st.id));}const picked=alarm.stationId?'r'+alarm.stationCat+':'+alarm.stationId:'';if(picked&&![...tone.options].some(o=>o.value===picked))tone.append(new Option('📻 …',picked));tone.value=picked||'t'+alarm.tone;tone.onchange=()=>{const v=tone.value;delete alarm.station;if(v[0]==='r'){const [c,i]=v.slice(1).split(':');alarm.stationCat=Number(c);alarm.stationId=Number(i);}else{alarm.stationCat=0;alarm.stationId=0;alarm.tone=Number(v.slice(1));}alarmTouched();};
+    // Sound: a tone, a station or an MP3 on the SD card; the last two fall back to `fallback`.
+    const tone=alarmSelect(ALARM_TONES.map((k,i)=>['t'+i,t('tone.'+k)]),'t'+alarm.tone);const stations=typeof radioStations==='function'?radioStations():[];const groups={};for(const st of stations){if(!groups[st.category]){const group=document.createElement('optgroup');group.label=t('radio.alarmGroup')+' · '+st.categoryName;tone.append(group);groups[st.category]=group;}groups[st.category].append(new Option('📻 '+st.name,'r'+st.category+':'+st.id));}
+    if(alarmFiles.length){const group=document.createElement('optgroup');group.label=t('alarm.cardGroup');for(const f of alarmFiles)group.append(new Option('🎵 '+f.split('/').pop(),'f'+f));tone.append(group);}
+    const picked=alarm.file?'f'+alarm.file:alarm.stationId?'r'+alarm.stationCat+':'+alarm.stationId:'';if(picked&&![...tone.options].some(o=>o.value===picked))tone.append(new Option((alarm.file?'🎵 ':'📻 ')+(alarm.file?alarm.file.split('/').pop():'…'),picked));tone.value=picked||'t'+alarm.tone;
+    const fallback=alarmSelect(ALARM_TONES.map((k,i)=>[i,t('tone.'+k)]),alarm.tone);fallback.onchange=()=>{alarm.tone=Number(fallback.value);alarmTouched();};
+    const fallbackField=alarmField('alarm.fallbackTone',fallback);fallbackField.hidden=tone.value[0]==='t';
+    tone.onchange=()=>{const v=tone.value;delete alarm.station;alarm.file='';alarm.stationCat=0;alarm.stationId=0;if(v[0]==='r'){const [c,i]=v.slice(1).split(':');alarm.stationCat=Number(c);alarm.stationId=Number(i);}else if(v[0]==='f'){alarm.file=v.slice(1);}else{alarm.tone=Number(v.slice(1));fallback.value=alarm.tone;}fallbackField.hidden=v[0]==='t';alarmTouched();};
     const snooze=document.createElement('input');snooze.type='number';snooze.min=1;snooze.max=30;snooze.value=alarm.snooze;snooze.onchange=()=>{alarm.snooze=Math.min(30,Math.max(1,Math.round(Number(snooze.value)||9)));snooze.value=alarm.snooze;alarmTouched();};
     const sunrise=alarmSelect(ALARM_SUNRISE.map(m=>[m,m?t('alarm.sunriseBefore').replace('{m}',m):t('alarm.sunriseOff')]),alarm.sunrise);sunrise.onchange=()=>{alarm.sunrise=Number(sunrise.value);alarmTouched();};
-    grid.append(alarmField('alarm.zone',zone),alarmField('alarm.tone',tone),alarmField('alarm.snoozeMinutes',snooze),alarmField('alarm.sunrise',sunrise));
+    grid.append(alarmField('alarm.zone',zone),alarmField('alarm.tone',tone),fallbackField,alarmField('alarm.snoozeMinutes',snooze),alarmField('alarm.sunrise',sunrise));
     row.append(head,days,grid);root.append(row);
   });
 }
@@ -109,6 +115,21 @@ async function alarmDigitsSave(event){
   const d=alarmDigitsDraft;d.follow=$('alarmDigitsFollow').checked;d.font=$('alarmDigitsFont').value;d.color=$('alarmDigitsColor').value;
   try{settings=await api('/api/alarm-digits',d);alarmDigitsRender(true);toast(t('app.saved'));}catch(e){toast(e.message,true);}
 }
+// Ring tones (index = the alarm's tone) and the MP3s in /mp3 on the SD card (empty without a card).
+const ALARM_TONES=['beep','chime','melody','gentle','birds','rising','digital','piano','windchime','reveille'];
+let alarmFiles=[];
+async function alarmLoadFiles(){
+  const found=[];
+  const list=async path=>{const r=await fetch('/api/files?path='+encodeURIComponent(path),{cache:'no-store'});if(!r.ok)return [];return (await r.json()).entries||[];};
+  try{
+    for(const e of await list('/mp3')){
+      if(e.d){for(const s of await list('/mp3/'+e.n))if(!s.d&&/\.mp3$/i.test(s.n))found.push('/mp3/'+e.n+'/'+s.n);}
+      else if(/\.mp3$/i.test(e.n))found.push('/mp3/'+e.n);
+      if(found.length>=200)break;
+    }
+  }catch{}
+  alarmFiles=found.filter(p=>new TextEncoder().encode(p).length<96).sort((a,b)=>a.localeCompare(b,undefined,{numeric:true}));
+}
 async function alarmInit(){
   if($('alarmDigitsForm')){
     $('alarmDigitsForm').onsubmit=alarmDigitsSave;
@@ -117,7 +138,8 @@ async function alarmInit(){
   }
   if(!$('alarmForm'))return;
   $('alarmForm').onsubmit=alarmSave;
-  $('alarmAdd').onclick=()=>{if(alarmDraft.alarms.length>=(alarmData?.max||8))return;alarmDraft.alarms.push({enabled:true,zone:'',hour:7,minute:0,days:0x3e,tone:1,snooze:9,sunrise:0,stationCat:0,stationId:0,label:''});alarmTouched();alarmRenderList();};
+  alarmLoadFiles().then(()=>{if(alarmDraft)alarmRenderList();});
+  $('alarmAdd').onclick=()=>{if(alarmDraft.alarms.length>=(alarmData?.max||8))return;alarmDraft.alarms.push({enabled:true,zone:'',hour:7,minute:0,days:0x3e,tone:1,snooze:9,sunrise:0,stationCat:0,stationId:0,file:'',label:''});alarmTouched();alarmRenderList();};
   $('alarmVolume').oninput=()=>{$('alarmVolumeValue').textContent=$('alarmVolume').value+'%';alarmTouched();};
   for(const id of ['alarmRingMinutes','alarmBrief','alarmChime','timerFocus','timerRest'])$(id).addEventListener('change',alarmTouched);
   $('alarmTest').onclick=async()=>{const before=alarmData?.state?.speaker?.notes??0;await alarmAction({action:'test',tone:Number($('alarmTestTone').value),volume:Number($('alarmVolume').value)});setTimeout(async()=>{try{const d=await api('/api/alarms');const sp=d.state.speaker||{};toast(sp.notes>before?t('alarm.testPlaying').replace('{n}',sp.notes-before).replace('{hz}',sp.hz).replace('{duty}',Math.round(sp.duty/5.12)):t('alarm.testSilent'),!(sp.notes>before));}catch(e){toast(e.message,true);}},1200);};
@@ -128,7 +150,7 @@ async function alarmInit(){
   $('timerPause').onclick=()=>timerAction({action:alarmData?.state.timer.running?'pause':'resume'});
   $('timerReset').onclick=()=>timerAction({action:'reset'});
   $('timerPlus').onclick=()=>timerAction({action:'add',minutes:5});
-  const tones=$('alarmTestTone');tones.replaceChildren();['beep','chime','melody','gentle'].forEach((k,i)=>tones.add(new Option(t('tone.'+k),i)));tones.value='1';
-  languageHooks.push(()=>{['beep','chime','melody','gentle'].forEach((k,i)=>tones.options[i].text=t('tone.'+k));alarmRenderList();alarmRenderStatus();});
+  const tones=$('alarmTestTone');tones.replaceChildren();ALARM_TONES.forEach((k,i)=>tones.add(new Option(t('tone.'+k),i)));tones.value='1';
+  languageHooks.push(()=>{ALARM_TONES.forEach((k,i)=>tones.options[i].text=t('tone.'+k));alarmRenderList();alarmRenderStatus();});
   await alarmRefresh(true);alarmPolling();
 }

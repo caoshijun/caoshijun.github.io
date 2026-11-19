@@ -2,7 +2,8 @@ import {verifyVariant} from './core.mjs';
 import {initialLanguage,languageOptions,rememberLanguage,languages} from './language.mjs';
 const $=id=>document.getElementById(id),base=new URL('../',import.meta.url);
 const allowed=isSecureContext&&(location.protocol==='https:'||['localhost','127.0.0.1','[::1]'].includes(location.hostname));
-const supported='serial' in navigator;
+// Web Serial, or WebUSB (Android Chrome: ESP Web Tools 10.5 drives CH340 / CP210x / FTDI itself).
+const supported='serial' in navigator||'usb' in navigator;
 let catalog,selected,ready=false,busy=false,componentReady=false,generation=0,controller;
 let lang=initialLanguage(),messages={},languageTurn=0;
 const t=key=>messages[key]||key;
@@ -23,7 +24,7 @@ async function language(code,manual=false){
  try{
   const response=await fetch(new URL('locales/'+code+'.json',base));if(!response.ok)throw Error('Language file HTTP '+response.status);
   const values=await response.json();if(turn!==languageTurn)return;messages=values;lang=code;
-  document.documentElement.lang=code==='zh'?'zh-CN':code;document.title='CWBSM v3.1.0 · '+t('nav.install');
+  document.documentElement.lang=code==='zh'?'zh-CN':code;document.title='CWBSM v3.1.1 · '+t('nav.install');
   document.querySelectorAll('[data-i18n],[data-i18n-html]').forEach(el=>{const key=el.dataset.i18n||el.dataset.i18nHtml;if(!messages[key])return;if(el.dataset.i18nHtml)el.innerHTML=messages[key];else el.textContent=messages[key];});
   $('languageSelect').value=code;$('languageSelect').setAttribute('aria-label',t('language'));
   if(!selected)status(t('verify.idle'));if(manual)rememberLanguage(code);refresh();

@@ -1,6 +1,6 @@
 {
   "name": "CWBSM CYD \u00b7 ST7789",
-  "version": "v3.1.0",
+  "version": "v3.1.1",
   "new_install_prompt_erase": true,
   "new_install_improv_wait_time": 0,
   "builds": [

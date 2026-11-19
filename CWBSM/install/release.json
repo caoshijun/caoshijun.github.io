@@ -1,6 +1,6 @@
 {
   "project": "CWBSM",
-  "version": "v3.1.0",
+  "version": "v3.1.1",
   "chipFamily": "ESP32",
   "flashBytes": 4194304,
   "width": 320,
@@ -15,7 +15,7 @@
       "spiMHz": 40,
       "inverted": false,
       "manifest": "./manifests/cyd_ili9341.json",
-      "download": "./downloads/CWBSM-CYD-ILI9341-v3.1.0.zip",
+      "download": "./downloads/CWBSM-CYD-ILI9341-v3.1.1.zip",
       "files": [
         {
           "name": "bootloader.bin",
@@ -42,12 +42,12 @@
           "name": "firmware.bin",
           "path": "./firmware/cyd_ili9341/firmware.bin",
           "offset": 65536,
-          "bytes": 3788448,
-          "sha256": "1448ae4bc88c346aa498f19c05725d745ce0f5d85d4f2800901874a2c3b9c671"
+          "bytes": 3803344,
+          "sha256": "144f9b54c33365afb0660168321724cd5e9b9a2510b7dcb995dffdccb26fe4ca"
         }
       ],
-      "totalBytes": 3817248,
-      "applicationBytes": 3788448
+      "totalBytes": 3832144,
+      "applicationBytes": 3803344
     },
     {
       "id": "cyd_st7789",
@@ -57,7 +57,7 @@
       "spiMHz": 40,
       "inverted": false,
       "manifest": "./manifests/cyd_st7789.json",
-      "download": "./downloads/CWBSM-CYD-ST7789-v3.1.0.zip",
+      "download": "./downloads/CWBSM-CYD-ST7789-v3.1.1.zip",
       "files": [
         {
           "name": "bootloader.bin",
@@ -84,12 +84,12 @@
           "name": "firmware.bin",
           "path": "./firmware/cyd_st7789/firmware.bin",
           "offset": 65536,
-          "bytes": 3788016,
-          "sha256": "bfaf537dabe5f3fb721a3b7530fef4fda89c2e59d1eab8a83830383ce033692a"
+          "bytes": 3802944,
+          "sha256": "36bf625f7ae4d83d48b75ca4cfad389c4cc7ea22642aaaf08306d0d218a994a3"
         }
       ],
-      "totalBytes": 3816816,
-      "applicationBytes": 3788016
+      "totalBytes": 3831744,
+      "applicationBytes": 3802944
     },
     {
       "id": "e32r28t_ili9341",
@@ -99,7 +99,7 @@
       "spiMHz": 40,
       "inverted": false,
       "manifest": "./manifests/e32r28t_ili9341.json",
-      "download": "./downloads/CWBSM-E32R28T-ILI9341-v3.1.0.zip",
+      "download": "./downloads/CWBSM-E32R28T-ILI9341-v3.1.1.zip",
       "files": [
         {
           "name": "bootloader.bin",
@@ -126,12 +126,12 @@
           "name": "firmware.bin",
           "path": "./firmware/e32r28t_ili9341/firmware.bin",
           "offset": 65536,
-          "bytes": 3783600,
-          "sha256": "8305b9e87c9d45c31970a7b7774b0080051efdc81ee3a85621688dda5844d31d"
+          "bytes": 3798480,
+          "sha256": "7b41310cd888dbe5f419343132490d73f04e1c0fcee0c02ca12adf666cd34661"
         }
       ],
-      "totalBytes": 3812400,
-      "applicationBytes": 3783600
+      "totalBytes": 3827280,
+      "applicationBytes": 3798480
     },
     {
       "id": "e32r28t_st7789",
@@ -141,7 +141,7 @@
       "spiMHz": 40,
       "inverted": false,
       "manifest": "./manifests/e32r28t_st7789.json",
-      "download": "./downloads/CWBSM-E32R28T-ST7789-v3.1.0.zip",
+      "download": "./downloads/CWBSM-E32R28T-ST7789-v3.1.1.zip",
       "files": [
         {
           "name": "bootloader.bin",
@@ -168,12 +168,12 @@
           "name": "firmware.bin",
           "path": "./firmware/e32r28t_st7789/firmware.bin",
           "offset": 65536,
-          "bytes": 3783152,
-          "sha256": "21845aa00e1806b258cc7f292102067fa9c2fc3b7c6a1202278493f4d29352f2"
+          "bytes": 3798096,
+          "sha256": "651b297d7b2bc5c0960c3fa7201104c4838f8b88a6174c472421719fa094d8d1"
         }
       ],
-      "totalBytes": 3811952,
-      "applicationBytes": 3783152
+      "totalBytes": 3826896,
+      "applicationBytes": 3798096
     }
   ]
 }
