@@ -26,7 +26,7 @@
  "model.compatibility": "Für das klassische ESP32-Profil mit 4 MB, 320×240 und XPT2046 dieses Projekts. Die Platinenverdrahtung prüfen.",
  "model.wiring": "Anschlüsse und Prüfung",
  "model.wiringText": "LCD CLK14 · MOSI13 · DC2 · CS15 · BL21. Touch CLK25 · MOSI32 · MISO39 · CS33 · IRQ36.",
- "model.validation": "Alle vier v3.2.0-Firmwares sind kompiliert und geprüft; CYD · ILI9341 und E32R28T · ST7789 wurden auf Hardware getestet. Nicht für ESP32-S3 / C3 oder andere Auflösungen.",
+ "model.validation": "Alle vier v3.2.1-Firmwares sind kompiliert und geprüft; CYD · ILI9341 und E32R28T · ST7789 wurden auf Hardware getestet. Nicht für ESP32-S3 / C3 oder andere Auflösungen.",
  "browser.checking": "Browser wird geprüft…",
  "browser.unsupported": "Dieser Browser kann keine serielle Schnittstelle nutzen. Verwende Chrome / Edge am Computer oder Chrome unter Android, oder lade die Firmware herunter.",
  "browser.insecure": "Diese Seite über HTTPS oder localhost öffnen.",

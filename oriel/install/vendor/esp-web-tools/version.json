@@ -4,5 +4,5 @@
   "source": "https://registry.npmjs.org/esp-web-tools/-/esp-web-tools-10.5.2.tgz",
   "integrity": "sha512-i5qsHv1bnrb/9gmKEN7qIaDTMOMy6OctrgFVXStrU2s79erY2Z7IKydveNk0eDhQTarfwyR4eXspOUIF6kYawg==",
   "license": "Apache-2.0",
-  "patched": "install-dialog: esptool-js baudrate 115200 -> window.orielBaud||460800 (connects at 115200, writes at the rate chosen on the page, default 460800)"
+  "patched": "install-dialog: (1) esptool-js baudrate 115200 -> window.orielBaud||460800 (connects at 115200, writes at the rate chosen on the page, default 460800); (2) Transport.setSignals records DTR=false too (upstream \"t&&(this._DTR_state=t)\" kept DTR=true after the reset into the bootloader, so the RTS hard reset after flashing held GPIO0 low / did nothing and the board stayed in the flasher until RESET)"
 }

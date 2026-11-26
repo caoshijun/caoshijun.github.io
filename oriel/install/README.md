@@ -1,4 +1,4 @@
-# Oriel v3.2.0 Web Installer
+# Oriel v3.2.1 Web Installer
 
 在本目录执行 `python3 -m http.server 8766 --bind 127.0.0.1`，使用桌面 Chrome 或 Edge 打开 http://127.0.0.1:8766 。不能直接双击 HTML 烧录。
 

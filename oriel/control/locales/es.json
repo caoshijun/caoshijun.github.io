@@ -25,7 +25,7 @@
   "device.stacks": "Pila de tareas libre mínima (bucle principal / datos / radio)",
   "device.uptime": "Tiempo de actividad",
   "device.cpu": "Uso de CPU",
-  "device.cpuHint": "Uso aproximado de ambos núcleos cada 2 segundos; el gráfico muestra el último minuto.",
+  "device.cpuHint": "Uso de ambos núcleos según el tiempo de ejecución medido de las tareas, cada 2 segundos; debajo, las tareas más activas [núcleo]. El gráfico muestra el último minuto.",
   "footer.setup": "Configurar",
   "setup.title": "Configurar Wi-Fi",
   "setup.join": "1. Conectar Wi-Fi",
@@ -981,7 +981,12 @@
   "about.hardware": "ESP32 clásico · 4 MB de flash · pantalla 320×240 · táctil XPT2046. Hay cuatro firmwares: placas CYD y E32R28T, cada una con pantalla ILI9341 o ST7789; la línea de arriba muestra la versión, la placa y el controlador de pantalla de este dispositivo. La CYD tiene sensor de luz para brillo automático; la E32R28T, amplificador. La pantalla táctil se calibra en el primer arranque y puede recalibrarse desde el engranaje → Sistema → Pantalla o en Mantenimiento.",
   "about.v312": "Calibración táctil en el primer arranque (y cuando se quiera), la página Acerca de del dispositivo muestra el controlador de pantalla, el instalador web permite elegir la velocidad de escritura y esta página se actualizó.",
   "about.v311": "10 tonos de alarma, alarmas con MP3 de la SD o radio con respaldo automático, zona horaria y tiempo según la IP, brillo de la CYD según la luz ambiente de fábrica, grabado web a 460800.",
-  "about.v310": "Cuatro firmwares según placa y pantalla, compilado con ESP-IDF con mucha más memoria libre, emisoras HTTPS y número de relojes por página configurable.",
-  "about.v30": "App de tarjeta SD (música, libros, fotos), gestor de archivos web, copia de la configuración en la SD.",
-  "about.changelog": "Historial completo de cambios ↗"
+  "about.changelog": "Historial completo de cambios ↗",
+  "alarm.srcStation": "Radio",
+  "alarm.tabCard": "Tarjeta SD",
+  "alarm.noFavorites": "Aún no hay emisoras favoritas. Toca la estrella en la radio.",
+  "alarm.noCardMp3": "No hay MP3 en la carpeta /mp3 de la tarjeta SD",
+  "alarm.fallbackShort": "Reserva",
+  "about.v321": "Elige en el dispositivo una emisora favorita o un MP3 de la SD para una alarma (con tono de reserva); menos CPU por el separador que respira y la salida de audio; uso de CPU exacto por tarea; la placa se reinicia sola tras grabar por web.",
+  "about.v320": "El proyecto se llama ahora Oriel; cambian el punto de acceso, el nombre de host, los archivos de copia y la dirección web; las copias y datos MFA antiguos no se conservan."
 }

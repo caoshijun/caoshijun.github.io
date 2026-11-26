@@ -24,7 +24,7 @@ async function language(code,manual=false){
  try{
   const response=await fetch(new URL('locales/'+code+'.json',base));if(!response.ok)throw Error('Language file HTTP '+response.status);
   const values=await response.json();if(turn!==languageTurn)return;messages=values;lang=code;
-  document.documentElement.lang=code==='zh'?'zh-CN':code;document.title='Oriel v3.2.0 · '+t('nav.install');
+  document.documentElement.lang=code==='zh'?'zh-CN':code;document.title='Oriel v3.2.1 · '+t('nav.install');
   document.querySelectorAll('[data-i18n],[data-i18n-html]').forEach(el=>{const key=el.dataset.i18n||el.dataset.i18nHtml;if(!messages[key])return;if(el.dataset.i18nHtml)el.innerHTML=messages[key];else el.textContent=messages[key];});
   $('languageSelect').value=code;$('languageSelect').setAttribute('aria-label',t('language'));
   if(!selected)status(t('verify.idle'));if(manual)rememberLanguage(code);refresh();

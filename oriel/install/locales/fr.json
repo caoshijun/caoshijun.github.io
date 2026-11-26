@@ -26,7 +26,7 @@
  "model.compatibility": "Pour le profil ESP32 classique, 4 Mo, 320×240 et XPT2046 du projet. Vérifiez le câblage de la carte.",
  "model.wiring": "Brochage et validation",
  "model.wiringText": "LCD CLK14 · MOSI13 · DC2 · CS15 · BL21. Tactile CLK25 · MOSI32 · MISO39 · CS33 · IRQ36.",
- "model.validation": "Les quatre firmwares v3.2.0 sont compilés et vérifiés ; CYD · ILI9341 et E32R28T · ST7789 ont été testés sur le matériel. Pas pour ESP32-S3 / C3 ni d’autres résolutions.",
+ "model.validation": "Les quatre firmwares v3.2.1 sont compilés et vérifiés ; CYD · ILI9341 et E32R28T · ST7789 ont été testés sur le matériel. Pas pour ESP32-S3 / C3 ni d’autres résolutions.",
  "browser.checking": "Vérification du navigateur…",
  "browser.unsupported": "Ce navigateur ne peut pas accéder au port série. Utilisez Chrome / Edge sur ordinateur ou Chrome sur Android, ou téléchargez le firmware.",
  "browser.insecure": "Ouvrez cette page via HTTPS ou localhost.",

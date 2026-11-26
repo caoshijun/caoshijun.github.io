@@ -26,7 +26,7 @@
  "model.compatibility": "For this project’s classic ESP32 / 4 MB / 320×240 / XPT2046 pin configuration only. Not every board with the same display name is compatible.",
  "model.wiring": "Pin connections and validation",
  "model.wiringText": "LCD: CLK 14 · MOSI 13 · DC 2 · CS 15 · BL 21. Touch: CLK 25 · MOSI 32 · MISO 39 · CS 33 · IRQ 36.",
- "model.validation": "All four v3.2.0 builds compile and pass the package checks; CYD · ILI9341 and E32R28T · ST7789 were tested on hardware. Not for ESP32-S3 / C3 or other resolutions.",
+ "model.validation": "All four v3.2.1 builds compile and pass the package checks; CYD · ILI9341 and E32R28T · ST7789 were tested on hardware. Not for ESP32-S3 / C3 or other resolutions.",
  "browser.checking": "Checking browser…",
  "browser.unsupported": "This browser cannot reach a serial port. Use desktop Chrome / Edge or Chrome on Android, or download the firmware and flash it manually.",
  "browser.insecure": "Open this page over HTTPS or localhost.",

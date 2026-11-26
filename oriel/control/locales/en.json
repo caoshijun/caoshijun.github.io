@@ -307,7 +307,7 @@
   "device.stacks": "Lowest free task stack (main loop / data / radio)",
   "device.uptime": "Uptime",
   "device.cpu": "CPU usage",
-  "device.cpuHint": "Approximate dual-core usage sampled every 2 seconds; the chart shows the last minute.",
+  "device.cpuHint": "Usage of both cores from the tasks’ measured run time, every 2 seconds; below, the busiest tasks [core]. The chart shows the last minute.",
   "footer.setup": "Setup",
   "setup.title": "Wi-Fi setup",
   "setup.join": "1. Join Wi-Fi",
@@ -981,7 +981,12 @@
   "about.hardware": "Classic ESP32 · 4 MB flash · 320×240 screen · XPT2046 touch. There are four firmwares: the CYD and E32R28T boards, each with an ILI9341 or ST7789 screen; the line above shows this device's firmware version, board and screen controller. The CYD has a light sensor, so brightness can follow the room; the E32R28T has an amplifier. Touch is calibrated on first boot and can be redone from the device gear → System → Display or from Device maintenance.",
   "about.v312": "Touch calibration on first boot (and on demand), the device About page shows the screen controller, the web installer lets you choose the write speed, and this page was updated.",
   "about.v311": "10 alarm tones, alarms from SD card MP3s or radio with automatic fallback, time zone and weather from your IP, CYD brightness follows ambient light out of the box, web flashing at 460800.",
-  "about.v310": "Four firmwares by board and screen, built with ESP-IDF with much more free memory, HTTPS radio stations, and a configurable number of clocks per page.",
-  "about.v30": "SD card app (music, e-books, photos), web file manager, configuration backup to the SD card.",
-  "about.changelog": "Full changelog ↗"
+  "about.changelog": "Full changelog ↗",
+  "alarm.srcStation": "Radio",
+  "alarm.tabCard": "SD card",
+  "alarm.noFavorites": "No favourite stations yet. Tap the star in the radio to add one.",
+  "alarm.noCardMp3": "No MP3 in the /mp3 folder of the SD card",
+  "alarm.fallbackShort": "Fallback",
+  "about.v321": "Choose a favourite station or an SD card MP3 for an alarm on the device (with a fallback tone); less CPU from the breathing separator and the audio output; exact per-task CPU usage; the board restarts by itself after web flashing.",
+  "about.v320": "The project is now called Oriel; hotspot, hostname, backup files and web address follow, old backups and MFA data are not carried over."
 }

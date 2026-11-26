@@ -307,7 +307,7 @@
   "device.stacks": "Pile de tâche libre minimale (boucle principale / données / radio)",
   "device.uptime": "Durée de fonctionnement",
   "device.cpu": "Utilisation du processeur",
-  "device.cpuHint": "Estimation des deux cœurs toutes les 2 secondes ; graphique de la dernière minute.",
+  "device.cpuHint": "Charge des deux cœurs d’après le temps d’exécution mesuré des tâches, toutes les 2 secondes ; dessous, les tâches les plus actives [cœur]. Graphique de la dernière minute.",
   "footer.setup": "Configuration",
   "setup.title": "Configurer le Wi-Fi",
   "setup.join": "1. Connexion Wi-Fi",
@@ -981,7 +981,12 @@
   "about.hardware": "ESP32 classique · flash 4 Mo · écran 320×240 · tactile XPT2046. Quatre firmwares existent : cartes CYD et E32R28T, chacune avec écran ILI9341 ou ST7789 ; la ligne ci-dessus indique la version, la carte et le contrôleur d’écran de cet appareil. La CYD a un capteur de lumière pour la luminosité automatique ; la E32R28T un amplificateur. Le tactile est calibré au premier démarrage et peut être refait depuis l’engrenage → Système → Affichage ou dans Maintenance.",
   "about.v312": "Calibrage tactile au premier démarrage (et à la demande), la page À propos de l’appareil affiche le contrôleur d’écran, l’installateur web permet de choisir la vitesse d’écriture, et cette page a été mise à jour.",
   "about.v311": "10 sonneries, alarmes avec MP3 de la carte SD ou radio avec repli automatique, fuseau horaire et météo d’après l’IP, luminosité de la CYD selon la lumière ambiante par défaut, flashage web à 460800.",
-  "about.v310": "Quatre firmwares selon carte et écran, compilation ESP-IDF avec bien plus de mémoire libre, radios HTTPS et nombre d’horloges par page réglable.",
-  "about.v30": "App carte SD (musique, livres, photos), gestionnaire de fichiers web, sauvegarde de la configuration sur la carte SD.",
-  "about.changelog": "Historique complet des versions ↗"
+  "about.changelog": "Historique complet des versions ↗",
+  "alarm.srcStation": "Radio",
+  "alarm.tabCard": "Carte SD",
+  "alarm.noFavorites": "Pas encore de stations favorites. Touchez l’étoile dans la radio.",
+  "alarm.noCardMp3": "Aucun MP3 dans le dossier /mp3 de la carte SD",
+  "alarm.fallbackShort": "Secours",
+  "about.v321": "Choisir sur l’appareil une station favorite ou un MP3 de la carte SD pour une alarme (avec tonalité de secours) ; moins de CPU pour le séparateur qui respire et la sortie audio ; charge CPU exacte par tâche ; redémarrage automatique après le flashage web.",
+  "about.v320": "Le projet s’appelle désormais Oriel ; point d’accès, nom d’hôte, fichiers de sauvegarde et adresse web changent, les anciennes sauvegardes et données MFA ne sont pas reprises."
 }

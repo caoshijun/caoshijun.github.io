@@ -307,7 +307,7 @@
   "device.stacks": "Kleinster freier Task-Stack (Hauptschleife / Daten / Radio)",
   "device.uptime": "Betriebszeit",
   "device.cpu": "CPU-Auslastung",
-  "device.cpuHint": "Geschätzte Auslastung beider Kerne alle 2 Sekunden; Diagramm der letzten Minute.",
+  "device.cpuHint": "Auslastung beider Kerne aus der gemessenen Laufzeit der Tasks, alle 2 Sekunden; darunter die aktivsten Tasks [Kern]. Diagramm der letzten Minute.",
   "footer.setup": "Einrichtung",
   "setup.title": "WLAN einrichten",
   "setup.join": "1. WLAN verbinden",
@@ -981,7 +981,12 @@
   "about.hardware": "Klassischer ESP32 · 4 MB Flash · 320×240-Bildschirm · XPT2046-Touch. Es gibt vier Firmwares: die Boards CYD und E32R28T, jeweils mit ILI9341- oder ST7789-Bildschirm; die Zeile oben zeigt Firmware-Version, Board und Bildschirm-Controller dieses Geräts. Der CYD hat einen Lichtsensor für automatische Helligkeit, der E32R28T einen Verstärker. Der Touch wird beim ersten Start kalibriert und lässt sich über Zahnrad → System → Anzeige oder in der Gerätewartung neu kalibrieren.",
   "about.v312": "Touch-Kalibrierung beim ersten Start (und auf Wunsch), die Info-Seite am Gerät zeigt den Bildschirm-Controller, der Web-Installer bietet eine wählbare Schreibgeschwindigkeit, und diese Seite wurde aktualisiert.",
   "about.v311": "10 Wecktöne, Wecken mit MP3 von der SD-Karte oder Radio mit automatischem Rückfall, Zeitzone und Wetter nach IP, CYD-Helligkeit ab Werk nach Umgebungslicht, Web-Flashen mit 460800.",
-  "about.v310": "Vier Firmwares nach Board und Bildschirm, Build mit ESP-IDF und deutlich mehr freiem Speicher, HTTPS-Radiosender und einstellbare Anzahl Uhren pro Seite.",
-  "about.v30": "SD-Karten-App (Musik, E-Books, Fotos), Web-Dateiverwaltung, Konfigurationssicherung auf die SD-Karte.",
-  "about.changelog": "Vollständiges Änderungsprotokoll ↗"
+  "about.changelog": "Vollständiges Änderungsprotokoll ↗",
+  "alarm.srcStation": "Radio",
+  "alarm.tabCard": "SD-Karte",
+  "alarm.noFavorites": "Noch keine Lieblingssender. Im Radio auf den Stern tippen.",
+  "alarm.noCardMp3": "Keine MP3 im Ordner /mp3 der SD-Karte",
+  "alarm.fallbackShort": "Ersatz",
+  "about.v321": "Lieblingssender oder MP3 von der SD-Karte als Weckton am Gerät (mit Ersatzton); weniger CPU-Last durch den atmenden Trenner und die Audioausgabe; genaue CPU-Last je Task; Neustart nach dem Web-Flashen von selbst.",
+  "about.v320": "Das Projekt heißt jetzt Oriel; Hotspot, Hostname, Sicherungsdateien und Webadresse ändern sich, alte Sicherungen und MFA-Daten werden nicht übernommen."
 }
