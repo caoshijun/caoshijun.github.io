@@ -1,0 +1,179 @@
+{
+  "project": "Oriel",
+  "version": "v3.2.0",
+  "chipFamily": "ESP32",
+  "flashBytes": 4194304,
+  "width": 320,
+  "height": 240,
+  "touch": "XPT2046",
+  "variants": [
+    {
+      "id": "cyd_ili9341",
+      "board": "CYD",
+      "controller": "ILI9341",
+      "label": "CYD \u00b7 ILI9341",
+      "spiMHz": 40,
+      "inverted": false,
+      "manifest": "./manifests/cyd_ili9341.json",
+      "download": "./downloads/Oriel-CYD-ILI9341-v3.2.0.zip",
+      "files": [
+        {
+          "name": "bootloader.bin",
+          "path": "./firmware/cyd_ili9341/bootloader.bin",
+          "offset": 4096,
+          "bytes": 17536,
+          "sha256": "eb0806f0bce29529a3108c352c6b615c4d201bcd987eaea3c4f65a5e32b17d9a"
+        },
+        {
+          "name": "partitions.bin",
+          "path": "./firmware/cyd_ili9341/partitions.bin",
+          "offset": 32768,
+          "bytes": 3072,
+          "sha256": "0a8d1d639f18bf01f729aff519ad9007e51c3d4ac1d0ce7c8dfaee4e4a59400c"
+        },
+        {
+          "name": "boot_app0.bin",
+          "path": "./firmware/cyd_ili9341/boot_app0.bin",
+          "offset": 57344,
+          "bytes": 8192,
+          "sha256": "7d2c7ac4888bfd75cd5f56e8d61f69595121183afc81556c876732fd3782c62f"
+        },
+        {
+          "name": "firmware.bin",
+          "path": "./firmware/cyd_ili9341/firmware.bin",
+          "offset": 65536,
+          "bytes": 3816432,
+          "sha256": "82bee5f661bf0d8811f8b67bb1dadbbccef2df2247ecd81f9a1fd9330e84fcd4"
+        }
+      ],
+      "totalBytes": 3845232,
+      "applicationBytes": 3816432
+    },
+    {
+      "id": "cyd_st7789",
+      "board": "CYD",
+      "controller": "ST7789",
+      "label": "CYD \u00b7 ST7789",
+      "spiMHz": 40,
+      "inverted": false,
+      "manifest": "./manifests/cyd_st7789.json",
+      "download": "./downloads/Oriel-CYD-ST7789-v3.2.0.zip",
+      "files": [
+        {
+          "name": "bootloader.bin",
+          "path": "./firmware/cyd_st7789/bootloader.bin",
+          "offset": 4096,
+          "bytes": 17536,
+          "sha256": "eb0806f0bce29529a3108c352c6b615c4d201bcd987eaea3c4f65a5e32b17d9a"
+        },
+        {
+          "name": "partitions.bin",
+          "path": "./firmware/cyd_st7789/partitions.bin",
+          "offset": 32768,
+          "bytes": 3072,
+          "sha256": "0a8d1d639f18bf01f729aff519ad9007e51c3d4ac1d0ce7c8dfaee4e4a59400c"
+        },
+        {
+          "name": "boot_app0.bin",
+          "path": "./firmware/cyd_st7789/boot_app0.bin",
+          "offset": 57344,
+          "bytes": 8192,
+          "sha256": "7d2c7ac4888bfd75cd5f56e8d61f69595121183afc81556c876732fd3782c62f"
+        },
+        {
+          "name": "firmware.bin",
+          "path": "./firmware/cyd_st7789/firmware.bin",
+          "offset": 65536,
+          "bytes": 3815840,
+          "sha256": "13644866d697144fb5b39cbb2a21400e5af1708317355f21850eac8e3a729bfd"
+        }
+      ],
+      "totalBytes": 3844640,
+      "applicationBytes": 3815840
+    },
+    {
+      "id": "e32r28t_ili9341",
+      "board": "E32R28T",
+      "controller": "ILI9341",
+      "label": "E32R28T \u00b7 ILI9341",
+      "spiMHz": 40,
+      "inverted": false,
+      "manifest": "./manifests/e32r28t_ili9341.json",
+      "download": "./downloads/Oriel-E32R28T-ILI9341-v3.2.0.zip",
+      "files": [
+        {
+          "name": "bootloader.bin",
+          "path": "./firmware/e32r28t_ili9341/bootloader.bin",
+          "offset": 4096,
+          "bytes": 17536,
+          "sha256": "eb0806f0bce29529a3108c352c6b615c4d201bcd987eaea3c4f65a5e32b17d9a"
+        },
+        {
+          "name": "partitions.bin",
+          "path": "./firmware/e32r28t_ili9341/partitions.bin",
+          "offset": 32768,
+          "bytes": 3072,
+          "sha256": "0a8d1d639f18bf01f729aff519ad9007e51c3d4ac1d0ce7c8dfaee4e4a59400c"
+        },
+        {
+          "name": "boot_app0.bin",
+          "path": "./firmware/e32r28t_ili9341/boot_app0.bin",
+          "offset": 57344,
+          "bytes": 8192,
+          "sha256": "7d2c7ac4888bfd75cd5f56e8d61f69595121183afc81556c876732fd3782c62f"
+        },
+        {
+          "name": "firmware.bin",
+          "path": "./firmware/e32r28t_ili9341/firmware.bin",
+          "offset": 65536,
+          "bytes": 3811456,
+          "sha256": "cb589f00dff661d0bb79cc854f6d67a5883a2567c9523ac47bd4410854f07f91"
+        }
+      ],
+      "totalBytes": 3840256,
+      "applicationBytes": 3811456
+    },
+    {
+      "id": "e32r28t_st7789",
+      "board": "E32R28T",
+      "controller": "ST7789",
+      "label": "E32R28T \u00b7 ST7789",
+      "spiMHz": 40,
+      "inverted": false,
+      "manifest": "./manifests/e32r28t_st7789.json",
+      "download": "./downloads/Oriel-E32R28T-ST7789-v3.2.0.zip",
+      "files": [
+        {
+          "name": "bootloader.bin",
+          "path": "./firmware/e32r28t_st7789/bootloader.bin",
+          "offset": 4096,
+          "bytes": 17536,
+          "sha256": "eb0806f0bce29529a3108c352c6b615c4d201bcd987eaea3c4f65a5e32b17d9a"
+        },
+        {
+          "name": "partitions.bin",
+          "path": "./firmware/e32r28t_st7789/partitions.bin",
+          "offset": 32768,
+          "bytes": 3072,
+          "sha256": "0a8d1d639f18bf01f729aff519ad9007e51c3d4ac1d0ce7c8dfaee4e4a59400c"
+        },
+        {
+          "name": "boot_app0.bin",
+          "path": "./firmware/e32r28t_st7789/boot_app0.bin",
+          "offset": 57344,
+          "bytes": 8192,
+          "sha256": "7d2c7ac4888bfd75cd5f56e8d61f69595121183afc81556c876732fd3782c62f"
+        },
+        {
+          "name": "firmware.bin",
+          "path": "./firmware/e32r28t_st7789/firmware.bin",
+          "offset": 65536,
+          "bytes": 3811040,
+          "sha256": "2ead7e94723c05cc6d949fb14937afc0beb7235ce1dea738aa95678b25c7a06d"
+        }
+      ],
+      "totalBytes": 3839840,
+      "applicationBytes": 3811040
+    }
+  ]
+}

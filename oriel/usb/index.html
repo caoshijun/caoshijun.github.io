@@ -1,0 +1,7 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Oriel USB 配网</title>
+<style>body{font:16px system-ui;max-width:40rem;margin:3rem auto;padding:0 1rem;line-height:1.6}label,input,button{display:block;margin:.7rem 0}input{padding:.6rem;width:min(100%,28rem);box-sizing:border-box}button{padding:.6rem 1rem}#status{white-space:pre-wrap}</style>
+<h1>Oriel USB 配网</h1><p>使用支持 Web Serial 的桌面浏览器连接设备。仅在设备配网模式下可保存 Wi-Fi。</p>
+<a href="../index.html">返回控制中心</a><button id="connect">连接 USB 设备</button><button id="disconnect" disabled>断开 USB</button><a id="lan" hidden target="_blank" rel="noopener">打开设备局域网后台</a><div id="status" role="status">未连接</div>
+<form id="wifi"><label>Wi-Fi 名称<input id="ssid" required maxlength="32" autocomplete="off"></label><label>Wi-Fi 密码<input id="password" type="password" maxlength="63" autocomplete="new-password"></label><button id="save" type="submit" disabled>保存并重启</button></form>
+<button id="capture">刷新屏幕</button><canvas id="screen" style="max-width:100%;border:1px solid #aaa;touch-action:none"></canvas><p>点击屏幕控制设备；长按打开菜单。收音机播放时暂停截图。</p>
+<script src="./protocol.js"></script><script src="./app.js"></script></html>

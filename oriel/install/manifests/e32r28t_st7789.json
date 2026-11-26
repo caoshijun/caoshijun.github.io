@@ -1,0 +1,29 @@
+{
+  "name": "Oriel E32R28T \u00b7 ST7789",
+  "version": "v3.2.0",
+  "new_install_prompt_erase": true,
+  "new_install_improv_wait_time": 0,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        {
+          "path": "../firmware/e32r28t_st7789/bootloader.bin",
+          "offset": 4096
+        },
+        {
+          "path": "../firmware/e32r28t_st7789/partitions.bin",
+          "offset": 32768
+        },
+        {
+          "path": "../firmware/e32r28t_st7789/boot_app0.bin",
+          "offset": 57344
+        },
+        {
+          "path": "../firmware/e32r28t_st7789/firmware.bin",
+          "offset": 65536
+        }
+      ]
+    }
+  ]
+}
