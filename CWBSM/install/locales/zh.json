@@ -26,7 +26,7 @@
  "model.compatibility": "仅适用于本项目的经典 ESP32 / 4 MB / 320×240 / XPT2046 引脚配置。不是所有同名屏幕的开发板都兼容。",
  "model.wiring": "查看适用引脚与验证范围",
  "model.wiringText": "LCD：CLK 14 · MOSI 13 · DC 2 · CS 15 · BL 21。触摸：CLK 25 · MOSI 32 · MISO 39 · CS 33 · IRQ 36。",
- "model.validation": "v3.1.1 四个固件均已通过编译与发布包校验；CYD · ILI9341 与 E32R28T · ST7789 已实机测试。不适用于 ESP32-S3 / C3 或其他分辨率。",
+ "model.validation": "v3.1.2 四个固件均已通过编译与发布包校验；CYD · ILI9341 与 E32R28T · ST7789 已实机测试。不适用于 ESP32-S3 / C3 或其他分辨率。",
  "browser.checking": "检查浏览器…",
  "browser.unsupported": "此浏览器无法连接串口。请使用桌面版 Chrome / Edge 或 Android 上的 Chrome，或下载固件手动烧录。",
  "browser.insecure": "请通过 HTTPS 或 localhost 打开此页面。",
@@ -88,5 +88,7 @@
  "model.cyd_ili9341": "经典 CYD，ILI9341 屏幕，带光敏电阻。",
  "model.cyd_st7789": "经典 CYD，ST7789 屏幕，带光敏电阻。",
  "model.e32r28t_ili9341": "E32R28T（LCDwiki 2.8 寸），ILI9341 屏幕，带功放，无光敏电阻。",
- "model.e32r28t_st7789": "E32R28T（LCDwiki 2.8 寸），ST7789 屏幕，带功放，无光敏电阻。"
+ "model.e32r28t_st7789": "E32R28T（LCDwiki 2.8 寸），ST7789 屏幕，带功放，无光敏电阻。",
+ "baud.label": "刷写速率",
+ "baud.hint": "默认 460800 适合大多数 USB 串口芯片。更高速率更快，但部分 CH340 / CP2102 或较长数据线可能失败；失败时请改用更低速率重试。"
 }

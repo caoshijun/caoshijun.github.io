@@ -26,7 +26,7 @@
  "model.compatibility": "Für das klassische ESP32-Profil mit 4 MB, 320×240 und XPT2046 dieses Projekts. Die Platinenverdrahtung prüfen.",
  "model.wiring": "Anschlüsse und Prüfung",
  "model.wiringText": "LCD CLK14 · MOSI13 · DC2 · CS15 · BL21. Touch CLK25 · MOSI32 · MISO39 · CS33 · IRQ36.",
- "model.validation": "Alle vier v3.1.1-Firmwares sind kompiliert und geprüft; CYD · ILI9341 und E32R28T · ST7789 wurden auf Hardware getestet. Nicht für ESP32-S3 / C3 oder andere Auflösungen.",
+ "model.validation": "Alle vier v3.1.2-Firmwares sind kompiliert und geprüft; CYD · ILI9341 und E32R28T · ST7789 wurden auf Hardware getestet. Nicht für ESP32-S3 / C3 oder andere Auflösungen.",
  "browser.checking": "Browser wird geprüft…",
  "browser.unsupported": "Dieser Browser kann keine serielle Schnittstelle nutzen. Verwende Chrome / Edge am Computer oder Chrome unter Android, oder lade die Firmware herunter.",
  "browser.insecure": "Diese Seite über HTTPS oder localhost öffnen.",
@@ -88,5 +88,7 @@
  "model.cyd_ili9341": "Klassisches CYD mit ILI9341-Display und Lichtsensor.",
  "model.cyd_st7789": "Klassisches CYD mit ST7789-Display und Lichtsensor.",
  "model.e32r28t_ili9341": "E32R28T (LCDwiki 2,8″) mit ILI9341-Display, Verstärker, ohne Lichtsensor.",
- "model.e32r28t_st7789": "E32R28T (LCDwiki 2,8″) mit ST7789-Display, Verstärker, ohne Lichtsensor."
+ "model.e32r28t_st7789": "E32R28T (LCDwiki 2,8″) mit ST7789-Display, Verstärker, ohne Lichtsensor.",
+ "baud.label": "Schreibgeschwindigkeit (Baud)",
+ "baud.hint": "460800 passt zu den meisten USB-Seriell-Chips. Höhere Raten sind schneller, können aber mit manchen CH340 / CP2102 oder langen Kabeln scheitern; dann mit niedrigerer Rate wiederholen."
 }

@@ -24,7 +24,7 @@ async function language(code,manual=false){
  try{
   const response=await fetch(new URL('locales/'+code+'.json',base));if(!response.ok)throw Error('Language file HTTP '+response.status);
   const values=await response.json();if(turn!==languageTurn)return;messages=values;lang=code;
-  document.documentElement.lang=code==='zh'?'zh-CN':code;document.title='CWBSM v3.1.1 · '+t('nav.install');
+  document.documentElement.lang=code==='zh'?'zh-CN':code;document.title='CWBSM v3.1.2 · '+t('nav.install');
   document.querySelectorAll('[data-i18n],[data-i18n-html]').forEach(el=>{const key=el.dataset.i18n||el.dataset.i18nHtml;if(!messages[key])return;if(el.dataset.i18nHtml)el.innerHTML=messages[key];else el.textContent=messages[key];});
   $('languageSelect').value=code;$('languageSelect').setAttribute('aria-label',t('language'));
   if(!selected)status(t('verify.idle'));if(manual)rememberLanguage(code);refresh();
@@ -55,10 +55,15 @@ async function select(id){
  }catch(error){if(turn!==generation)return;status(t('verify.error')+' · '+error.message,'error');$('retryVerify').hidden=false;}
  finally{if(turn===generation){$('verificationProgress').hidden=true;refresh();}}
 }
+// Write speed for the install dialog (vendored ESP Web Tools reads window.cwbsmBaud; default 460800).
+const BAUDS=['115200','230400','460800','921600','1500000','2000000'];
+function baud(value,save=false){if(!BAUDS.includes(value))value='460800';window.cwbsmBaud=Number(value);$('baudSelect').value=value;if(save)try{localStorage.setItem('cwbsm-baud',value);}catch{}}
+{let saved=null;try{saved=localStorage.getItem('cwbsm-baud');}catch{}baud(saved||'460800');}
+$('baudSelect').onchange=()=>baud($('baudSelect').value,true);
 $('modelChoices').disabled=true;
 language(lang);
 fetch(new URL('release.json',base),{cache:'no-cache'}).then(response=>{if(!response.ok)throw Error('HTTP '+response.status);return response.json();}).then(value=>{catalog=value;$('releaseVersion').textContent=value.version;$('modelChoices').disabled=false;}).catch(error=>status(t('verify.catalogError')+' · '+error.message,'error'));
 $('modelChoices').addEventListener('change',event=>select(event.target.value));$('retryVerify').onclick=()=>select(selected.id);
 $('installer').addEventListener('click',event=>{if(!(ready&&componentReady&&supported&&allowed&&!busy)){event.preventDefault();event.stopImmediatePropagation();}},true);
 if(allowed&&supported)import('../vendor/esp-web-tools/install-button.js').then(()=>{componentReady=true;refresh();}).catch(error=>{status(t('verify.componentError')+' · '+error.message,'error');});
-new MutationObserver(()=>{busy=!!document.querySelector('ewt-install-dialog');$('modelChoices').disabled=busy||!catalog;refresh();}).observe(document.body,{childList:true});
+new MutationObserver(()=>{busy=!!document.querySelector('ewt-install-dialog');$('baudSelect').disabled=busy;$('modelChoices').disabled=busy||!catalog;refresh();}).observe(document.body,{childList:true});

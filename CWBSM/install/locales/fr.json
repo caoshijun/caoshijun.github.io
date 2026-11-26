@@ -26,7 +26,7 @@
  "model.compatibility": "Pour le profil ESP32 classique, 4 Mo, 320×240 et XPT2046 du projet. Vérifiez le câblage de la carte.",
  "model.wiring": "Brochage et validation",
  "model.wiringText": "LCD CLK14 · MOSI13 · DC2 · CS15 · BL21. Tactile CLK25 · MOSI32 · MISO39 · CS33 · IRQ36.",
- "model.validation": "Les quatre firmwares v3.1.1 sont compilés et vérifiés ; CYD · ILI9341 et E32R28T · ST7789 ont été testés sur le matériel. Pas pour ESP32-S3 / C3 ni d’autres résolutions.",
+ "model.validation": "Les quatre firmwares v3.1.2 sont compilés et vérifiés ; CYD · ILI9341 et E32R28T · ST7789 ont été testés sur le matériel. Pas pour ESP32-S3 / C3 ni d’autres résolutions.",
  "browser.checking": "Vérification du navigateur…",
  "browser.unsupported": "Ce navigateur ne peut pas accéder au port série. Utilisez Chrome / Edge sur ordinateur ou Chrome sur Android, ou téléchargez le firmware.",
  "browser.insecure": "Ouvrez cette page via HTTPS ou localhost.",
@@ -88,5 +88,7 @@
  "model.cyd_ili9341": "CYD classique, écran ILI9341, capteur de lumière.",
  "model.cyd_st7789": "CYD classique, écran ST7789, capteur de lumière.",
  "model.e32r28t_ili9341": "E32R28T (LCDwiki 2,8″), écran ILI9341, amplificateur, sans capteur de lumière.",
- "model.e32r28t_st7789": "E32R28T (LCDwiki 2,8″), écran ST7789, amplificateur, sans capteur de lumière."
+ "model.e32r28t_st7789": "E32R28T (LCDwiki 2,8″), écran ST7789, amplificateur, sans capteur de lumière.",
+ "baud.label": "Vitesse d’écriture (bauds)",
+ "baud.hint": "460800 convient à la plupart des puces USB série. Plus haut va plus vite mais peut échouer avec certains CH340 / CP2102 ou câbles longs ; en cas d’échec, réessayez plus bas."
 }

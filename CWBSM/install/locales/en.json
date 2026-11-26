@@ -26,7 +26,7 @@
  "model.compatibility": "For this project’s classic ESP32 / 4 MB / 320×240 / XPT2046 pin configuration only. Not every board with the same display name is compatible.",
  "model.wiring": "Pin connections and validation",
  "model.wiringText": "LCD: CLK 14 · MOSI 13 · DC 2 · CS 15 · BL 21. Touch: CLK 25 · MOSI 32 · MISO 39 · CS 33 · IRQ 36.",
- "model.validation": "All four v3.1.1 builds compile and pass the package checks; CYD · ILI9341 and E32R28T · ST7789 were tested on hardware. Not for ESP32-S3 / C3 or other resolutions.",
+ "model.validation": "All four v3.1.2 builds compile and pass the package checks; CYD · ILI9341 and E32R28T · ST7789 were tested on hardware. Not for ESP32-S3 / C3 or other resolutions.",
  "browser.checking": "Checking browser…",
  "browser.unsupported": "This browser cannot reach a serial port. Use desktop Chrome / Edge or Chrome on Android, or download the firmware and flash it manually.",
  "browser.insecure": "Open this page over HTTPS or localhost.",
@@ -88,5 +88,7 @@
  "model.cyd_ili9341": "Classic CYD with an ILI9341 display and a light sensor.",
  "model.cyd_st7789": "Classic CYD with an ST7789 display and a light sensor.",
  "model.e32r28t_ili9341": "E32R28T (LCDwiki 2.8″) with an ILI9341 display, amplifier, no light sensor.",
- "model.e32r28t_st7789": "E32R28T (LCDwiki 2.8″) with an ST7789 display, amplifier, no light sensor."
+ "model.e32r28t_st7789": "E32R28T (LCDwiki 2.8″) with an ST7789 display, amplifier, no light sensor.",
+ "baud.label": "Write speed (baud)",
+ "baud.hint": "460800 suits most USB serial chips. Higher rates are faster but may fail with some CH340 / CP2102 adapters or long cables; if flashing fails, retry at a lower rate."
 }

@@ -26,7 +26,7 @@
  "model.compatibility": "本プロジェクトの従来型 ESP32、4 MB、320×240、XPT2046 用です。基板の配線を確認してください。",
  "model.wiring": "配線と検証範囲",
  "model.wiringText": "LCD CLK14 · MOSI13 · DC2 · CS15 · BL21。タッチ CLK25 · MOSI32 · MISO39 · CS33 · IRQ36。",
- "model.validation": "v3.1.1 の 4 つのファームウェアはビルドとパッケージ検査済み。CYD · ILI9341 と E32R28T · ST7789 は実機で確認済み。ESP32-S3 / C3 や他の解像度には対応しません。",
+ "model.validation": "v3.1.2 の 4 つのファームウェアはビルドとパッケージ検査済み。CYD · ILI9341 と E32R28T · ST7789 は実機で確認済み。ESP32-S3 / C3 や他の解像度には対応しません。",
  "browser.checking": "ブラウザーを確認中…",
  "browser.unsupported": "このブラウザーはシリアルポートに接続できません。PC の Chrome / Edge か Android の Chrome を使うか、ファームウェアをダウンロードしてください。",
  "browser.insecure": "HTTPS または localhost で開いてください。",
@@ -88,5 +88,7 @@
  "model.cyd_ili9341": "標準の CYD、ILI9341 画面、光センサー付き。",
  "model.cyd_st7789": "標準の CYD、ST7789 画面、光センサー付き。",
  "model.e32r28t_ili9341": "E32R28T（LCDwiki 2.8 インチ）、ILI9341 画面、アンプ付き、光センサーなし。",
- "model.e32r28t_st7789": "E32R28T（LCDwiki 2.8 インチ）、ST7789 画面、アンプ付き、光センサーなし。"
+ "model.e32r28t_st7789": "E32R28T（LCDwiki 2.8 インチ）、ST7789 画面、アンプ付き、光センサーなし。",
+ "baud.label": "書き込み速度（ボーレート）",
+ "baud.hint": "460800 はほとんどの USB シリアルチップで使えます。高速ほど速く書き込めますが、一部の CH340 / CP2102 や長いケーブルでは失敗することがあります。失敗したら低い速度で再試行してください。"
 }
