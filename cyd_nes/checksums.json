@@ -1,0 +1,62 @@
+{
+  "ili9341": [
+    {
+      "name": "bootloader.bin",
+      "offset": 4096,
+      "path": "firmware/ili9341/bootloader.bin",
+      "size": 24928,
+      "sha256": "a284abdd0e4339f9ae18030953606a21d9d2f86d41d78ac46d606226f03ba939"
+    },
+    {
+      "name": "partitions.bin",
+      "offset": 32768,
+      "path": "firmware/ili9341/partitions.bin",
+      "size": 3072,
+      "sha256": "9def827c7df1aacfe36aed3aa15184c87fe497c0ce0426c1ba7f3f3e61551b8e"
+    },
+    {
+      "name": "boot_app0.bin",
+      "offset": 57344,
+      "path": "firmware/ili9341/boot_app0.bin",
+      "size": 8192,
+      "sha256": "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0"
+    },
+    {
+      "name": "firmware.bin",
+      "offset": 65536,
+      "path": "firmware/ili9341/firmware.bin",
+      "size": 1482608,
+      "sha256": "a1e80e7cb68614cb196a19b9e1f35cbdf4a289fb2eb444cdf08d658529774e41"
+    }
+  ],
+  "st7789": [
+    {
+      "name": "bootloader.bin",
+      "offset": 4096,
+      "path": "firmware/st7789/bootloader.bin",
+      "size": 24928,
+      "sha256": "a284abdd0e4339f9ae18030953606a21d9d2f86d41d78ac46d606226f03ba939"
+    },
+    {
+      "name": "partitions.bin",
+      "offset": 32768,
+      "path": "firmware/st7789/partitions.bin",
+      "size": 3072,
+      "sha256": "9def827c7df1aacfe36aed3aa15184c87fe497c0ce0426c1ba7f3f3e61551b8e"
+    },
+    {
+      "name": "boot_app0.bin",
+      "offset": 57344,
+      "path": "firmware/st7789/boot_app0.bin",
+      "size": 8192,
+      "sha256": "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0"
+    },
+    {
+      "name": "firmware.bin",
+      "offset": 65536,
+      "path": "firmware/st7789/firmware.bin",
+      "size": 1482928,
+      "sha256": "74148b5c62a6fbda57043c7110ccdc0fc4298f85770c50d99026726687315944"
+    }
+  ]
+}

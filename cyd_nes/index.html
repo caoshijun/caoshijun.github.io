@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="在浏览器中为 ESP32 CYD 安装支持中文 ROM 文件名和 ZIP 的 NES 模拟器。">
+  <meta name="color-scheme" content="dark">
+  <title>CYD NES · 固件安装</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+<header class="bar wrap">
+  <a href="#" class="brand"><span class="brand-icon">N</span><span>CYD NES <small>WEB INSTALLER</small></span></a>
+  <nav><a href="#install">安装固件</a><a href="#setup">准备游戏</a><a href="#source">源码</a></nav>
+</header>
+<main>
+  <section class="hero wrap">
+    <div>
+      <p class="eyebrow">NES · ESP32 CYD</p>
+      <h1>经典游戏，<br><em>装进口袋屏幕。</em></h1>
+      <p class="intro">为 CYD 安装 Anemoia NES 模拟器，支持中文游戏文件名与 ZIP ROM。连接 USB，在浏览器中选择屏幕型号即可安装。</p>
+      <a class="button primary" href="#install">开始安装</a>
+      <div class="features"><span>中文文件名</span><span>ZIP 游戏</span><span>串口控制器</span></div>
+    </div>
+    <div class="console" aria-label="NES 游戏机示意图"><div class="console-top"><span>CYD NES</span><span>320 × 240</span></div><div class="screen"><div class="screen-game">NES</div><div class="screen-label">READY TO PLAY</div></div><div class="console-bottom"><div class="dpad">✚</div><div class="keys"><span>B</span><span>A</span></div></div></div>
+  </section>
+  <section class="install wrap" id="install">
+    <div class="heading"><div><p class="eyebrow">选择你的设备</p><h2>选择屏幕，连接 CYD。</h2></div><p>按实际屏幕控制器选择版本。两种固件使用串口控制器、横屏和 80 MHz SD 读取。</p></div>
+    <div class="columns">
+      <fieldset class="models"><legend>屏幕型号</legend>
+        <label class="model"><input type="radio" name="screen" value="ili9341"><span><strong>ILI9341</strong><small>40 MHz · 横屏</small></span></label>
+        <label class="model"><input type="radio" name="screen" value="st7789"><span><strong>ST7789</strong><small>80 MHz · 横屏</small></span></label>
+        <p class="hint">屏幕型号请查看购买信息或原固件配置。</p>
+      </fieldset>
+      <div class="card">
+        <h3>连接设备</h3>
+        <p>使用 USB 数据线连接 CYD，关闭占用串口的其他程序。桌面版 Chrome 或 Edge 支持浏览器刷写。</p>
+        <div class="selection"><span>已选固件</span><strong id="selected">请选择屏幕型号</strong></div>
+        <p id="status" class="status" role="status" aria-live="polite">选择后自动校验固件。</p>
+        <label class="speed">刷写速率 <select id="baud"><option value="2000000">2,000,000</option><option value="1500000">1,500,000</option><option value="921600" selected>921,600</option><option value="460800">460,800</option><option value="230400">230,400</option><option value="115200">115,200</option></select></label>
+        <esp-web-install-button id="installer"><button slot="activate" class="button primary install-btn" id="installButton" disabled>选择屏幕型号</button><span slot="unsupported">请使用支持 Web Serial 的 Chrome 或 Edge。</span><span slot="not-allowed">请通过 HTTPS 或 localhost 打开页面。</span></esp-web-install-button>
+        <p class="hint">写入会替换设备原有固件。高速连接失败时可选择较低速率重试。</p>
+      </div>
+    </div>
+  </section>
+  <section id="setup" class="setup wrap"><div class="heading"><div><p class="eyebrow">安装完成</p><h2>准备游戏。</h2></div><p>使用 FAT32 格式的 microSD 卡，安装完成后插入 CYD。</p></div>
+    <div class="steps"><article><h3>创建目录</h3><p>在 SD 卡上创建目录，将游戏放入其中。</p><code>/roms/nes/</code></article><article><h3>复制 ROM</h3><p>支持中文文件名、.nes 和 .zip。每个 ZIP 需要包含一个 .nes 文件。</p></article><article><h3>连接控制器</h3><p>使用 WebSerial 控制器或串口控制器适配器。启动 ZIP 游戏时需要先解压。</p><a href="https://jethomson.github.io/SerialGameControllerAdapter/WebSerialController.html">打开 WebSerial 控制器</a></article></div>
+  </section>
+  <section id="source" class="source wrap"><div><p class="eyebrow">源码与固件</p><h2>继续开发。</h2><p>基于 Anemoia-ESP32，包含构建源码、中文字体和 ZIP 解压组件。</p></div><div class="links"><a href="src/README.md">构建说明</a><a href="firmware/ili9341/firmware.bin" download>ILI9341 应用固件</a><a href="firmware/st7789/firmware.bin" download>ST7789 应用固件</a><a href="https://github.com/Shim06/Anemoia-ESP32">上游项目</a></div></section>
+</main>
+<footer class="wrap footer"><span>CYD NES · 基于 Anemoia-ESP32</span><a href="vendor/esp-web-tools/LICENSE">ESP Web Tools 许可</a></footer>
+</body>
+</html>
